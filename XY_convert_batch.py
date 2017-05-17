@@ -15,7 +15,7 @@ x_coords = "lon"
 y_coords = "lat"
 
 # Read all the shapefiles in folder 'targetFeatures'
-for file in os.listdir(repository):
+for file in os.listdir(repository + "input/"):
     if file.endswith('txt'):
     	in_Table = repository + file
     	print in_Table
