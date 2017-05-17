@@ -23,7 +23,7 @@ for file in os.listdir(input):
     	in_Table = input + file
     	print in_Table
     	base = file.split(".")
-    	code = base[0][-3:]
+    	code = base[0]
     	out_Layer = "XY" + code + "_Layer"
     	saved_Layer = intermediate + "XY" + code + ".lyr"
     	saved_Shp = intermediate + "XY" + code + ".shp"
@@ -36,7 +36,7 @@ for file in os.listdir(input):
     	# Make the XY event layer...
     	arcpy.MakeXYEventLayer_management(in_Table, x_coords, y_coords, out_Layer, spRef)
     	# Print the total rows
-    	print arcpy.GetCount_management(out_Layer)
+    	#print arcpy.GetCount_management(out_Layer)
     	# Save to a layer and shapefile file
     	arcpy.SaveToLayerFile_management(out_Layer, saved_Layer)
     	arcpy.CopyFeatures_management(saved_Layer, saved_Shp)  
