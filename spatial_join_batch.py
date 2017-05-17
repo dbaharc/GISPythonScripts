@@ -30,9 +30,7 @@ for shp in os.listdir(targetFeatures):
         base = shp.split(".")
         # Get the numbers
         code = base[2][-3:]
-        print(code)
-        outfc = output + code + "Airports.sph
-        print(outfc)
+        outfc = intermediate + code + "Airports.sph
         # Do it
         print "Joining "+targetFeatures+shp+" with "+joinFeature + "to get "+ outfc
         gp.SpatialJoin(targetFeatures+shp, joinFeature, outfc, "JOIN_ONE_TO_MANY", "KEEP_ALL","WITHIN_A_DISTANCE","50 Miles","#")
