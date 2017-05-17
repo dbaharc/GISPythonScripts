@@ -11,19 +11,22 @@ arcpy.env.overwriteOutput = True
 
 # Set environment settings
 repository = "X:/Raj Dany/geocoding/"
+input = repository + "input/"
+intermediate = repository + "intermediate/"
+output = repository + "output/"
 x_coords = "lon"
 y_coords = "lat"
 
 # Read all the shapefiles in folder 'targetFeatures'
-for file in os.listdir(repository + "input/"):
+for file in os.listdir(input):
     if file.endswith('txt'):
-    	in_Table = repository + file
+    	in_Table = input + file
     	print in_Table
     	base = file.split(".")
     	code = base[0][-3:]
     	out_Layer = "XY" + code + "_Layer"
-    	saved_Layer = repository + "XY" + code + ".lyr"
-    	saved_Shp = repository + "XY" + code + ".shp"
+    	saved_Layer = intermediate + "XY" + code + ".lyr"
+    	saved_Shp = intermediate + "XY" + code + ".shp"
     	# Set the spatial reference
         spRef = "GEOGCS['GCS_WGS_1984',DATUM['D_WGS_1984',SPHEROID['WGS_1984',6378137.0,298.257223563]],\
                PRIMEM['Greenwich',0.0],UNIT['Degree',0.0174532925199433]];\
