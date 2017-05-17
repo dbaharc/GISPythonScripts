@@ -34,4 +34,7 @@ for shp in os.listdir(targetFeatures):
         # Do it
         print "Joining "+targetFeatures+shp+" with "+joinFeatures+"districts"+code+".shp to get "+outfc+shp
         gp.SpatialJoin(targetFeatures+shp, joinFeatures+"districts"+code+".shp", outfc+shp, "JOIN_ONE_TO_ONE", "KEEP_ALL")		
+
+#arcpy.ExportXYv_stats("//Mac/Home/Documents/ArcGIS/Default.gdb/XYPubGeoCoord_SpatialJoin","gc_pairid;lat;lon;airportid;airportNam;airportCod;airportC_1;airportISO;airportI_1","COMMA","X:/Raj Dany/geocoding/PubGeoCoordAirports","ADD_FIELD_NAMES")
+
 print "\nDone."
