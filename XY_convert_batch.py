@@ -10,7 +10,7 @@ from arcpy import env
 arcpy.env.overwriteOutput = True
 
 # Set environment settings
-repository = "W:/Raj Dany/geocoding/"
+repository = "X:/Raj Dany/geocoding/"
 x_coords = "lon"
 y_coords = "lat"
 
@@ -38,4 +38,3 @@ for file in os.listdir(repository):
     	arcpy.SaveToLayerFile_management(out_Layer, saved_Layer)
     	arcpy.CopyFeatures_management(saved_Layer, saved_Shp)  
     	os.remove(saved_Layer)
-        
