@@ -21,7 +21,7 @@ for file in os.listdir(repository):
     	print in_Table
     	base = file.split(".")
     	code = base[0][-3:]
-    	out_Layer = "Awards" + code + "_Layer"
+    	out_Layer = "XY" + code + "_Layer"
     	saved_Layer = repository + "XY" + code + ".lyr"
     	saved_Shp = repository + "XY" + code + ".shp"
     	# Set the spatial reference
